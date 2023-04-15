@@ -1,12 +1,12 @@
 const express = require("express");
 const router = express.Router();
 
-router.get("/", (req, res) => {
+router.post("/data/shortenUrl", (req, res) => {
     res.send("Get URL");
 })
 
-router.post("/", (req, res) => {
-    res.send("Make URL");
+router.get("/:shortUrl", (req, res) => {
+    res.send(req.params.shortUrl);
 })
 
 module.exports = router;
